@@ -25,7 +25,8 @@ def search_vector(vector, k=5):
     results = []
 
     for i in indices[0]:
-        if i < len(memory_store):
+        # FAISS returns -1 when k > ntotal or no valid result
+        if 0 <= i < len(memory_store):
             results.append(memory_store[i])
 
     return results

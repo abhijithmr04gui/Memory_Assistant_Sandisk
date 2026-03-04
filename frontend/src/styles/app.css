@@ -1,0 +1,238 @@
+:root {
+  --bg-dark: #0f0f12;
+  --bg-card: #1a1a1f;
+  --bg-input: #252530;
+  --border: #2d2d38;
+  --text: #e8e8ed;
+  --text-muted: #8b8b9a;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --success: #34d399;
+  --error: #f87171;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  background: var(--bg-dark);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.dashboard {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.left-panel {
+  flex: 0 0 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.right-panel {
+  flex: 1;
+  min-width: 0;
+}
+
+.panel-section h2,
+.right-panel h2 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.memory-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+.memory-form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.memory-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.memory-form button,
+.chat-ui button {
+  margin-top: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.memory-form button:hover:not(:disabled),
+.chat-ui button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.memory-form button:disabled,
+.chat-ui button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: var(--error);
+  font-size: 0.85rem;
+  margin: 0.5rem 0 0;
+}
+
+.chat-ui .messages {
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+}
+
+.chat-ui .placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.chat-ui .message {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.chat-ui .message-user {
+  background: rgba(99, 102, 241, 0.15);
+  border-left: 3px solid var(--accent);
+}
+
+.chat-ui .message-ai {
+  background: var(--bg-input);
+  border-left: 3px solid var(--success);
+}
+
+.chat-ui .message.typing {
+  opacity: 0.8;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: inherit;
+}
+
+.chat-input input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.memory-timeline h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.memory-card {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.memory-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.memory-card small {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.timeline-loading,
+.memory-timeline .empty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    flex: none;
+  }
+}
