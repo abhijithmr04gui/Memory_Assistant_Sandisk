@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sentence-transformers
+faiss-cpu
+numpy
+scikit-learn
+sqlalchemy
+pydantic
+python-multipart
+python-jose
+passlib[bcrypt]
+openai
+python-dotenv
