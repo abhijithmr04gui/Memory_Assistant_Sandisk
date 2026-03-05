@@ -12,4 +12,5 @@ frontend/package-lock.json
 *.log
 backend/.env
 backend/venv/
+*.env
 
