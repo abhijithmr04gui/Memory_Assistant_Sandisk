@@ -11,7 +11,7 @@ load_dotenv()
 # --- Configuration ---
 class Settings(BaseSettings):
     GEMINI_API_KEY: str
-    MODEL_NAME: str = "gemini-2.0-flash"
+    MODEL_NAME: str = "gemini-flash-latest"
 
 settings = Settings()
 print("Loaded GEMINI_API_KEY:", settings.GEMINI_API_KEY)
@@ -50,7 +50,7 @@ def _fallback_answer(query: str, memories: List[str]) -> str:
 
 def generate_answer(query: str, raw_memories: List[str]) -> str:
     """
-    Generates a response using Gemini 2.0 Flash based on retrieved context.
+    Generates a response using Gemini 3.1 Flash based on retrieved context.
     """
     if not client:
         return _fallback_answer(query, raw_memories)
